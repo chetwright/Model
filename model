@@ -1,0 +1,62 @@
+#include <stdio.h>
+/*written by Chet Wright in C.  The functions, as their names imply manipulate the arrays set up in main.  The premise is that the cube is always facing with white as the top, Blue right, yellow back, green bottom,
+orange left, red front.  Count cells as if they are on the top, furthest left = 0, futherest right = 1, closest left = 2, closest right = 3.  After this printing of the arrays and function calls need to be implemented*/
+void top_clock(front, back, bottom, top, left, right), for example see top_clock;  Colors correspond to numbers
+{
+  front[0] = right[0];
+  front[1] = right[1];
+
+  right[0] = back[0];
+  right[1] = back[1];
+
+  left[0] = front[0];
+  left[1] = front[1];
+
+  top[0] = top[2];
+  top[1] = top[0];
+  top[2] = top[3];
+  top[3] = top[1];
+}
+void top_counter(front, back, bottom, top, left, right)
+{
+}
+void bot_clock(front, back, bottom, top, left, right)
+{
+}
+void bot_counter(front, back, bottom, top, left, right)
+{
+}
+void front_clock(front, back, bottom, top, left, right)
+{
+}
+void front_counter(front, back, bottom, top, left, right)
+{
+}
+void bot_clock(front, back, bottom, top, left, right)
+{
+}
+void bot_counter(front, back, bottom, top, left, right)
+{
+}
+void right_clock(front, back, bottom, top, left, right)
+{
+}
+void right_counter(front, back, bottom, top, left, right)
+{
+}
+void left_clock(front, back, bottom, top, left, right)
+{
+}
+void left_counter(front, back, bottom, top, left, right)
+{
+}
+
+void main()
+{
+ int front[4];
+ int back[4];
+ int right[4];
+ int left[4];
+ int top[4];
+ int bottom[4];
+}
