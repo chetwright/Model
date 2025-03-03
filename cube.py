@@ -28,6 +28,7 @@
 #                   To check use all commands and then reverse them to see if the arrays return to their previous state
 #                   If this works on all then the program should be in working order
 import copy # Need to avoid shallow copying the lists, serious problem if you shallow copy the lists
+
 def right_turn(left_array, front_array, right_array, top_array, bottom_array, back_array):
     rd = copy.deepcopy(right_array)
     fd = copy.deepcopy(front_array)
@@ -40,44 +41,25 @@ def right_turn(left_array, front_array, right_array, top_array, bottom_array, ba
     right_array[1] = rd[0]
     right_array[2] = rd[3]
     right_array[3] = rd[1]
-##    temp = right_array[2]
-##    right_array[0] = temp
-##    temp = right_array[0]
-##    right_array[1] = temp
-##    temp = right_array[3]
-##    right_array[2] = temp
-##    temp = right_array[1]
-##    right_array[3] = temp
     
     front_array[1] = botd[1]
-##    temp = bottom_array[1]
-##    front_array[1] = temp
     front_array[3] = botd[3]
-##    temp = bottom_array[3]
-##    front_array[3] = temp
-##    
+ 
     
     top_array[1] = fd[1]
     top_array[3] = fd[3]
-##    temp = front_array[1]
-##    top_array[1] = temp
-##    temp = front_array[3]
-##    top_array[3] = temp
+
     
     bottom_array[1] = backd[0] #Remember backside flips around
     bottom_array[3] = backd[2]
-##    temp = back_array[0]
-##    bottom_array[1] = temp
 
-    #temp = back_array[2]
-    #back_array[3] = temp
+
+   
     back_array[0] = td[1]
     back_array[2] = td[3]
-    #temp = top_array[3]
-   #back_array[1] = temp
+    
 
-    #temp = top_array[0]
-    #back_array[3] = temp
+    
     model_cube(left_array, front_array, right_array, top_array, bottom_array, back_array)
     return left_array, front_array, right_array, top_array, bottom_array, back_array
     
@@ -90,55 +72,6 @@ def right_counter(left_array, front_array, right_array, top_array, bottom_array,
     ld = copy.deepcopy(left_array)
     td = copy.deepcopy(top_array)
 
-##    temp = right_array[1]
-##    right_array[0] = temp
-##    temp = right_array[3]
-##    right_array[1] = temp
-##    temp = right_array[0]
-##    right_array[2] = temp
-##    temp = right_array[2]
-##    right_array[3] = temp
-##
-##    temp = top_array[1]
-##    front_array[1] = temp
-##    temp = top_array[3]
-##    front_array[3] = temp
-##
-##    temp = back_array[0]
-##    top_array[1] = temp
-##    temp = back_array[1]
-##    top_array[3] = temp
-##
-##    temp = front_array[1]
-##    bottom_array[1] = temp
-##    temp = front_array[3]
-##    front_array[3] = temp
-##
-##    temp = bottom_array[3]
-##    back_array[0] = temp
-##    temp = bottom_array[2]
-##    back_array[2] = temp
-##   
-##    model_cube(left_array, front_array, right_array, top_array, bottom_array, back_array)
-##    return left_array, front_array, right_array, top_array, bottom_array, back_array
-##    rd[0] = copy.deepcopy(right_array[1])
-##    rd[1] = copy.deepcopy(right_array[3])
-##    rd[2] = copy.deepcopy(right_array[0])
-##    rd[3] = copy.deepcopy(right_array[2])
-##
-##    fd[1] = copy.deepcopy(top_array[1])
-##    fd[3] = copy.deepcopy(top_array[3])
-##    
-##    td[1] = copy.deepcopy(back_array[0])
-##    td[3] = copy.deepcopy(back_array[1])
-##
-##    botd[1] = copy.deepcopy(front_array[1])
-##    botd[3] = copy.deepcopy(front_array[3])
-##
-##    backd[0] = copy.deepcopy(bottom_array[3])
-##    backd[2] = copy.deepcopy(bottom_array[1])
-##    model_cube(ld,fd,rd,td,botd,backd)
-##    return ld,fd,rd,td,botd,backd
     right_array[0] = rd[1]
     right_array[1] = rd[3]
     right_array[2] = rd[0]
@@ -153,8 +86,8 @@ def right_counter(left_array, front_array, right_array, top_array, bottom_array,
     bottom_array[1] = fd[1]
     bottom_array[3] = fd[3]
 
-    back_array[0] = botd[3]
-    back_array[2] = botd[1]
+    back_array[0] = botd[1]
+    back_array[2] = botd[3]
     model_cube(left_array, front_array, right_array, top_array, bottom_array, back_array)
     return left_array, front_array, right_array, top_array, bottom_array, back_array
 def left_turn(left_array, front_array, right_array, top_array, bottom_array, back_array):
@@ -340,10 +273,10 @@ def bottom_turn(left_array, front_array, right_array, top_array, bottom_array, b
     front_array[2] = rd[2]
     front_array[3] = rd[3]
 
-    right_array[2] = backd[3]
-    right_array[3] = backd[2]
+    right_array[2] = backd[2]
+    right_array[3] = backd[3]
 
-    back_array[2] = ld[2]
+    back_array[2] = ld[2] 
     back_array[3] = ld[3]
 
     left_array[2] = fd[2]
@@ -365,8 +298,8 @@ def bottom_counter(left_array, front_array, right_array, top_array, bottom_array
     front_array[2] = ld[2]
     front_array[3] = ld[3]
 
-    back_array[2] = rd[2]
     back_array[3] = rd[3]
+    back_array[2] = rd[2]
 
     left_array[2] = backd[2]
     left_array[3] = backd[3]
@@ -385,9 +318,9 @@ def back_turn(left_array, front_array, right_array, top_array, bottom_array, bac
     td = copy.deepcopy(top_array)
 
     back_array[0] = backd[2]
-    back_array[1] = backd[3]
-    back_array[2] = backd[1]
-    back_array[3] = backd[0]
+    back_array[1] = backd[0]
+    back_array[2] = backd[3]
+    back_array[3] = backd[1]
     
     right_array[1] = td[0]
     right_array[3] = td[1]
