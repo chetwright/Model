@@ -27,7 +27,7 @@
 #                   Either need to use tuple packing or duplicate arrays(what was done here) for this to work properly
 #                   To check use all commands and then reverse them to see if the arrays return to their previous state
 #                   If this works on all then the program should be in working order
-
+import copy
 
 def right_turn(left_array, front_array, right_array, top_array, bottom_array, back_array):
     rd = copy.deepcopy(right_array)
